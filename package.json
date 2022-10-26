@@ -1,7 +1,7 @@
 {
   "name": "corona-react",
   "version": "1.1.0",
-  "homepage":  ".",
+  "homepage":  "https://main.d1uxv0zkwj8wf7.amplifyapp.com",
   "private": true,
   "dependencies": {
     "@lourenci/react-kanban": "^0.13.0",

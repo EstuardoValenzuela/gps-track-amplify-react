@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 ReactDOM.render(
-  <BrowserRouter basename="/demo/corona-react-free/template/demo_1/preview">
+  <BrowserRouter basename="/gps-tracker">
     <App />
   </BrowserRouter>
 , document.getElementById('root'));
