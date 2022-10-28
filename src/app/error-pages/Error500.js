@@ -10,16 +10,16 @@ export class Error500 extends Component {
             <div className="col-lg-7 mx-auto text-white">
               <div className="row align-items-center d-flex flex-row">
                 <div className="col-lg-6 text-lg-right pr-lg-4">
-                  <h1 className="display-1 mb-0">500</h1>
+                  <h1 className="display-1 mb-0">Oops</h1>
                 </div>
                 <div className="col-lg-6 error-page-divider text-lg-left pl-lg-4">
-                  <h2>SORRY!</h2>
-                  <h3 className="font-weight-light">Internal server error!</h3>
+                  <h2>Is not an error</h2>
+                  <h3 className="font-weight-light">This feature will realese soon!</h3>
                 </div>
               </div>
               <div className="row mt-5">
                 <div className="col-12 text-center mt-xl-2">
-                  <Link className="text-white font-weight-medium" to="/dashboard">Back to home</Link>
+                  <Link className="text-white font-weight-medium" to="/dashboard">Regresar</Link>
                 </div>
               </div>
             </div>

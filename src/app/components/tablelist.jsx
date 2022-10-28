@@ -38,11 +38,7 @@ const TableList = () => {
     }
   }
   state = gps;
-  function createRows(){ //This function clean the data and prepare the rows
-    const waitTime = async() =>{
-      await timeout(5000);
-    }
-    waitTime();   
+  function createRows(){ //This function clean the data and prepare the rows 
     console.log('GPS', gps);
     var totalTrips = [];
     var tripsShow = [];
@@ -55,7 +51,6 @@ const TableList = () => {
         // }
         var uniqueTrip = [state[index].travelID, state[index].createdAt];
         tripsShow.push(uniqueTrip);
-      //  htmlCode = htmlCode + '<tr><td>'+state[index].travelID+'</td><td>'+state[index].createdAt+'</td><td><label className="'+statusTrip+'</label></td><td><Link className="btn btn-primary" to={{pathname:"dashboard/mapbox", state: "hellow"}}><button type="button" className="btn btn-primary btn-icon-text" ><i className="mdi mdi-file-check btn-icon-prepend"></i>Monitorear</button></Link> &nbsp;<button type="button" className="btn btn-danger btn-icon-text"><i className="mdi mdi-upload btn-icon-prepend"></i>Eliminar</button></td></tr>';  
         totalTrips.push(state[index].travelID);
       }else{
         // if (state[index].currentPosicion == true) {
@@ -99,21 +94,14 @@ const TableList = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {createRows().map(columnTrip =>{
-                          function timeout(delay) {
-                            return new Promise( res => setTimeout(res, delay) );
-                          }
-                            const waitTime = async() =>{
-                              await timeout(50000);
-                            }
-                            waitTime();   
+                      {createRows().map(columnTrip =>{  
                         console.log(columnTrip[0]);
                         return(
                           <tr key={columnTrip[0]}>
                             <td>{columnTrip[0]}</td>
                             <td>{columnTrip[1]}</td>
                             <td><label className="badge badge-success">Completado</label></td>
-                            <td><Link className="btn btn-primary" to={{pathname:"dashboard/mapbox", state: {state, id:columnTrip[0]}}}><i className="mdi mdi-file-check btn-icon-prepend"></i>Monitorear</Link></td>
+                            <td><Link className="btn btn-primary" to={{pathname:"dashboard/mapbox", state: {state, id:columnTrip[0]}}}><i className="mdi mdi-adjust btn-icon-prepend"></i>Monitorear</Link></td>
                           </tr>
                         )
                       })}

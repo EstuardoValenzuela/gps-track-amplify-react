@@ -32,25 +32,25 @@ class AppRoutes extends Component {
         <Switch>
           <Route exact path="/dashboard" component={ Dashboard } />
 
-          <Route path="/basic-ui/buttons" component={ Buttons } />
-          <Route path="/basic-ui/dropdowns" component={ Dropdowns } />
-          <Route path="/basic-ui/typography" component={ Typography } />
+          <Route path="/monitoreo/combustible" component={ Buttons } />
+          <Route path="/monitoreo/distancias" component={ Dropdowns } />
+          <Route path="/monitoreo/integridad" component={ Typography } />
 
-          <Route path="/form-Elements/basic-elements" component={ BasicElements } />
+          {/* <Route path="/form-Elements/basic-elements" component={ BasicElements } />
 
           <Route path="/tables/basic-table" component={ BasicTable } />
 
           <Route path="/icons/mdi" component={ Mdi } />
 
-          <Route path="/charts/chart-js" component={ ChartJs } />
+          <Route path="/charts/chart-js" component={ ChartJs } /> */}
 
 
           <Route path="/user-pages/login-1" component={ Login } />
           <Route path="/user-pages/register-1" component={ Register1 } />
           <Route path="/dashboard/mapbox" component={ MapboxC } />
 
-          <Route path="/error-pages/error-404" component={ Error404 } />
-          <Route path="/error-pages/error-500" component={ Error500 } />
+          <Route path="/page/error-404" component={ Error404 } />
+          <Route path="/page/coming-soon" component={ Error500 } />
 
 
           <Redirect to="/dashboard" />

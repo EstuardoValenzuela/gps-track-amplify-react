@@ -55,8 +55,8 @@ class Sidebar extends Component {
     return (
       <nav className="sidebar sidebar-offcanvas" id="sidebar">
         <div className="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a className="sidebar-brand brand-logo" href="index.html"><img src={require('../../assets/images/logo4.svg')}  style={{ height: 200, width: 200 }} alt="logo" /></a>
-          <a className="sidebar-brand brand-logo-mini" href="index.html"><img src={require('../../assets/images/logo-mini.svg')} alt="logo" /></a>
+          <a className="sidebar-brand brand-logo" href="index.html"><img src={require('../../assets/images/location-gps-svgrepo-com.svg')}  style={{ height: 50, width: 50 }} alt="logo" /></a>
+          <a className="sidebar-brand brand-logo-mini" href="index.html"><img src={require('../../assets/images/location-gps-svgrepo-com.svg')} style={{ height: 40, width: 40 }} alt="logo" /></a>
         </div>
         <ul className="nav">
           <li className="nav-item profile">
@@ -67,8 +67,8 @@ class Sidebar extends Component {
                   <span className="count bg-success"></span>
                 </div>
                 <div className="profile-name">
-                  <h5 className="mb-0 font-weight-normal"><Trans>Henry Klein</Trans></h5>
-                  <span><Trans>Gold Member</Trans></span>
+                  <h5 className="mb-0 font-weight-normal"><Trans>John Hughes</Trans></h5>
+                  <span><Trans>Flota UNIS</Trans></span>
                 </div>
               </div>
               <Dropdown alignRight>
@@ -132,9 +132,9 @@ class Sidebar extends Component {
             <Collapse in={ this.state.basicUiMenuOpen }>
               <div>
                 <ul className="nav flex-column sub-menu">
-                  <li className="nav-item"> <Link className={ this.isPathActive('/basic-ui/buttons') ? 'nav-link active' : 'nav-link' } to="/basic-ui/buttons"><Trans>Combustible</Trans></Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/basic-ui/dropdowns') ? 'nav-link active' : 'nav-link' } to="/basic-ui/dropdowns"><Trans>Distancias</Trans></Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/basic-ui/typography') ? 'nav-link active' : 'nav-link' } to="/basic-ui/typography"><Trans>Integridad</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/basic-ui/buttons') ? 'nav-link active' : 'nav-link' } to="/page/coming-soon"><Trans>Combustible</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/basic-ui/dropdowns') ? 'nav-link active' : 'nav-link' } to="/page/coming-soon"><Trans>Distancias</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/basic-ui/typography') ? 'nav-link active' : 'nav-link' } to="/page/coming-soon"><Trans>Integridad</Trans></Link></li>
                 </ul>
               </div>
             </Collapse>
@@ -234,14 +234,14 @@ class Sidebar extends Component {
             <Collapse in={ this.state.errorPagesMenuOpen }>
               <div>
                 <ul className="nav flex-column sub-menu">
-                  <li className="nav-item"> <Link className={ this.isPathActive('/error-pages/error-404') ? 'nav-link active' : 'nav-link' } to="/error-pages/error-404">404</Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/error-pages/error-500') ? 'nav-link active' : 'nav-link' } to="/error-pages/error-500">500</Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/error-pages/error-404') ? 'nav-link active' : 'nav-link' } to="/page/coming-soon">Establecer limites</Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/error-pages/error-500') ? 'nav-link active' : 'nav-link' } to="/page/coming-soon">Alertas tempranas</Link></li>
                 </ul>
               </div>
             </Collapse>
           </li>
           <li className="nav-item menu-items">
-            <a className="nav-link" href="http://bootstrapdash.com/demo/corona-react-free/documentation/documentation.html" rel="noopener noreferrer" target="_blank">
+            <a className="nav-link" href="https://github.com/EstuardoValenzuela/gps-track-amplify-react" rel="noopener noreferrer" target="_blank">
               <span className="menu-icon">
                 <i className="mdi mdi-file-document-box"></i>
               </span>
