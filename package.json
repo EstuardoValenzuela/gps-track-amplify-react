@@ -1,7 +1,7 @@
 {
   "name": "gps-track",
   "version": "0.1.0",
-  "homepage":  "/",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@lourenci/react-kanban": "^0.13.0",
@@ -20,6 +20,7 @@
     "flag-icon-css": "^3.3.0",
     "font-awesome": "^4.7.0",
     "html-react-parser": "^3.0.4",
+    "i": "^0.3.7",
     "i18next": "^19.0.0",
     "i18next-browser-languagedetector": "^4.0.1",
     "mapbox-gl": "^2.10.0",
@@ -58,10 +59,12 @@
     "react-tag-autocomplete": "^5.11.1",
     "react-treebeard": "^3.2.4",
     "react-trello": "^2.2.3",
+    "react-tsparticles": "^2.3.3",
     "simple-line-icons": "^2.4.1",
     "slick-carousel": "^1.8.1",
     "sweetalert2-react": "^0.8.3",
     "ti-icons": "^0.1.2",
+    "tsparticles": "^2.3.4",
     "typicons.font": "^2.0.9"
   },
   "scripts": {

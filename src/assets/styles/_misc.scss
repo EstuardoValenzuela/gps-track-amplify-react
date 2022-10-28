@@ -64,7 +64,7 @@ body {
 }
 
 .content-wrapper {
-  background: $content-bg;
+
   padding: $content-padding;
   width: 100%;
   @include flex-grow(1);
