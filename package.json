@@ -1,7 +1,7 @@
 {
-  "name": "corona-react",
-  "version": "1.1.0",
-  "homepage":  "https://main.d1uxv0zkwj8wf7.amplifyapp.com",
+  "name": "gps-track",
+  "version": "0.1.0",
+  "homepage":  "/",
   "private": true,
   "dependencies": {
     "@lourenci/react-kanban": "^0.13.0",

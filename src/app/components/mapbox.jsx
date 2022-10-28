@@ -1,7 +1,7 @@
-import React, { Component,useRef, useEffect,useState  } from 'react';
+import React, {useRef, useEffect,useState  } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import {Link} from "react-router-dom"
-import Amplify, {API, graphqlOperation} from 'aws-amplify';
+import {Amplify, API, graphqlOperation} from 'aws-amplify';
 import awsconfig from '../../aws-exports'
 import { listGpsdbs } from '../../graphql/queries';
 

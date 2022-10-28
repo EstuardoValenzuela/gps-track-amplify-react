@@ -1,28 +1,29 @@
-import React, { Component,useRef, useEffect,  useState  } from 'react';
+import React, {useEffect,  useState  } from 'react';
 
-import Amplify, {API, graphqlOperation} from 'aws-amplify';
+import {Amplify, API, graphqlOperation} from 'aws-amplify';
 import awsconfig from '../../aws-exports'
 import { listGpsdbs } from '../../graphql/queries';
 import { FlightData } from '../models/FlightData';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
-import parse from 'html-react-parser';
+import {Link} from "react-router-dom";
+
+Amplify.configure(awsconfig);
 
 
 const TableList = () => {
+  function timeout(delay) {
+    return new Promise( res => setTimeout(res, delay) );
+  }
+  
 
   let state = FlightData;
-
-  const params = useParams();
   const [gps, setGps] = useState([]); 
 
   useEffect(() => {
-    fetchGps()
+    const waitTime = async() =>{
+      await timeout(5000);
+    }
+    waitTime();    
+    fetchGps();
   }, []);
 
   const fetchGps = async() =>{
@@ -38,6 +39,10 @@ const TableList = () => {
   }
   state = gps;
   function createRows(){ //This function clean the data and prepare the rows
+    const waitTime = async() =>{
+      await timeout(5000);
+    }
+    waitTime();   
     console.log('GPS', gps);
     var totalTrips = [];
     var tripsShow = [];
@@ -64,7 +69,6 @@ const TableList = () => {
   };
 
 
-Amplify.configure(awsconfig);
 
     return (
       <div>
@@ -96,9 +100,16 @@ Amplify.configure(awsconfig);
                     </thead>
                     <tbody>
                       {createRows().map(columnTrip =>{
+                          function timeout(delay) {
+                            return new Promise( res => setTimeout(res, delay) );
+                          }
+                            const waitTime = async() =>{
+                              await timeout(50000);
+                            }
+                            waitTime();   
                         console.log(columnTrip[0]);
                         return(
-                          <tr>
+                          <tr key={columnTrip[0]}>
                             <td>{columnTrip[0]}</td>
                             <td>{columnTrip[1]}</td>
                             <td><label className="badge badge-success">Completado</label></td>
