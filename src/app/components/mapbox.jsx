@@ -57,7 +57,7 @@ function generateColor1(){
 
 
 let clearCoordinates = prepareCoordinates(props.location.state); //call function to prepare coordiantes with first data
-
+console.log('coordinates to plot ->', clearCoordinates);
 const mapContainerRef = useRef(null);
 
 // Initialize map when component mounts
@@ -195,34 +195,60 @@ useEffect( () => {
 
     let coordinatesRoute = []; //Coordinates to push
     corLength = clearCoordinates.length;
+    let firstPoint = corLength-1;
+    let geojson_init = {
+      type: 'FeatureCollection',
+      features: [
+        {        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [parseFloat(clearCoordinates[firstPoint][0]), parseFloat(clearCoordinates[firstPoint][1])],
+          properties: {
+            title: clearCoordinates[firstPoint][2],
+            description: 'Lat:'+clearCoordinates[firstPoint][0]+', Lon:+'+clearCoordinates[firstPoint][1]
+          }
+        }}
+      ]
+    };
+    geojson_init.features.map((feature) =>
+    new mapboxgl.Marker({ "color": generateColor() }).setLngLat(feature.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`
+        <h4 id="title-market-mapbox">Inicio del viaje: `+clearCoordinates[firstPoint][2]+`</h4>
+        <hr>
+        <p id="title-market-mapbox">Latitud:`+clearCoordinates[firstPoint][0]+` </p>
+        <p id="title-market-mapbox">Longitud:`+clearCoordinates[firstPoint][1]+` </p>
+        `
+      )).addTo(map)
+  );
+
     for (let index = 0; index < clearCoordinates.length; index++) {
       console.log('length', clearCoordinates.length);
-      let geojson = {
-        type: 'FeatureCollection',
-        features: [
-          {        type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [parseFloat(clearCoordinates[index][0]), parseFloat(clearCoordinates[index][1])],
-            properties: {
-              title: clearCoordinates[index][2],
-              description: 'Lat:'+clearCoordinates[index][0]+', Lon:+'+clearCoordinates[index][1]
-            }
-          }}
-        ]
-      };
+      // let geojson = {
+      //   type: 'FeatureCollection',
+      //   features: [
+      //     {        type: 'Feature',
+      //     geometry: {
+      //       type: 'Point',
+      //       coordinates: [parseFloat(clearCoordinates[index][0]), parseFloat(clearCoordinates[index][1])],
+      //       properties: {
+      //         title: clearCoordinates[index][2],
+      //         description: 'Lat:'+clearCoordinates[index][0]+', Lon:+'+clearCoordinates[index][1]
+      //       }
+      //     }}
+      //   ]
+      // };
 
       // Create default markers
-      geojson.features.map((feature) =>
-        new mapboxgl.Marker({ "color": generateColor() }).setLngLat(feature.geometry.coordinates)
-            .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`
-            <h4 id="title-market-mapbox">`+clearCoordinates[index][2]+`</h4>
-            <hr>
-            <p id="title-market-mapbox">Latitud:`+clearCoordinates[index][0]+` </p>
-            <p id="title-market-mapbox">Longitud:`+clearCoordinates[index][1]+` </p>
-            `
-          )).addTo(map)
-      );
+      // geojson.features.map((feature) =>
+      //   new mapboxgl.Marker({ "color": generateColor() }).setLngLat(feature.geometry.coordinates)
+      //       .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`
+      //       <h4 id="title-market-mapbox">`+clearCoordinates[index][2]+`</h4>
+      //       <hr>
+      //       <p id="title-market-mapbox">Latitud:`+clearCoordinates[index][0]+` </p>
+      //       <p id="title-market-mapbox">Longitud:`+clearCoordinates[index][1]+` </p>
+      //       `
+      //     )).addTo(map)
+      // );
       coordinatesRoute.push([parseFloat(clearCoordinates[index][0]), parseFloat(clearCoordinates[index][1])]);
     }
     console.log('Coordinates', coordinatesRoute);
