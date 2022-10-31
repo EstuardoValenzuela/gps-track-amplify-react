@@ -63,7 +63,7 @@ const mapContainerRef = useRef(null);
 // Initialize map when component mounts
 useEffect( () => {
   
-
+   
   const map = new mapboxgl.Map({
     container: mapContainerRef.current,
     style: "mapbox://styles/estvalenzuela/cl9mxv2om000a14n74lmttfym",
@@ -73,6 +73,7 @@ useEffect( () => {
 
 
   const fetchdataGPSrepeat = setInterval(async() => {
+      routeID = routeID + 1;
       try  {
         const gpsData = await API.graphql(graphqlOperation(listGpsdbs))
         console.log(gpsData);
@@ -94,8 +95,8 @@ useEffect( () => {
 
 
   function preparenewCoordinates(arrayNewCoordinates, flag){
+    routeID = routeID + 1;
     if (flag == true) {
-      routeID = routeID +1;
       console.log('preparenewCoordinates function',arrayNewCoordinates);
       var processNewCoordinates = [];
       for (let index = 0; index < arrayNewCoordinates.length; index++) {
@@ -115,14 +116,14 @@ useEffect( () => {
           console.log("New data available, creating new points ;)", lengthNew);
           console.log('New coordinates', sortedArray);
           console.log('New LAT', sortedArray[0]);
-          new mapboxgl.Marker({ "color": generateColor1() }).setLngLat([parseFloat(sortedArray[0][0]),parseFloat(sortedArray[0][1])])
+      /*    new mapboxgl.Marker({ "color": generateColor1() }).setLngLat([parseFloat(sortedArray[0][0]),parseFloat(sortedArray[0][1])])
           .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`
           <h4 id="title-market-mapbox">`+sortedArray[0][2]+`</h4>
           <hr>
           <p id="title-market-mapbox">Latitud:`+sortedArray[0][0]+` </p>
           <p id="title-market-mapbox">Longitud:`+sortedArray[0][1]+` </p>
           `)).addTo(map);
-          map.flyTo({center: [parseFloat(sortedArray[0][0]),parseFloat(sortedArray[0][1])],speed: 0.8,curve: 2, zoom: 15});
+          map.flyTo({center: [parseFloat(sortedArray[0][0]),parseFloat(sortedArray[0][1])],speed: 0.8,curve: 2, zoom: 15}); */
       
           map.removeLayer('layer-with-pulsing-dot');
           map.removeSource('dot-point');
